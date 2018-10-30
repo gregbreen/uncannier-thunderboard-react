@@ -53,6 +53,9 @@ static const gecko_configuration_t config = {
   .bluetooth.sleep_clock_accuracy = 100, // ppm
   .gattdb = &bg_gattdb_data,
   .max_timers = 16,
+  .ota.flags = 0,
+  .ota.device_name_len = 3,
+  .ota.device_name_ptr = "OTA"
 };
 
 int main(void)

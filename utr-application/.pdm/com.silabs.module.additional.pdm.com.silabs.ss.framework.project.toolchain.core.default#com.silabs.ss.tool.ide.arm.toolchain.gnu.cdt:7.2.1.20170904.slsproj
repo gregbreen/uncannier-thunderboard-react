@@ -295,6 +295,7 @@
   <file name="board_features.h" uri="studio:/project/board_features.h"/>
   <file name="create_bl_files.sh" uri="studio:/project/create_bl_files.sh"/>
   <file name="ble-configuration.h" uri="studio:/project/ble-configuration.h"/>
+  <includePath uri="studio:/project/"/>
   <includePath uri="studio:/project/platform/emdrv/common/inc"/>
   <includePath uri="studio:/project/platform/emlib/inc"/>
   <includePath uri="studio:/project/platform/emdrv/uartdrv/inc"/>
@@ -315,7 +316,6 @@
   <includePath uri="studio:/project/platform/Device/SiliconLabs/EFR32BG1B/Source"/>
   <includePath uri="studio:/project/platform/radio/rail_lib/common"/>
   <includePath uri="studio:/project/platform/bootloader/api"/>
-  <includePath uri="studio:/project/"/>
   <includePath uri="studio:/project/platform/bootloader"/>
   <macroDefinition name="__STACK_SIZE" value="0x800"/>
   <macroDefinition name="HAL_CONFIG" value="1"/>

@@ -41,6 +41,9 @@
 #include "accori_service.h"
 #include "aio_service.h"
 
+/* uncannier profiles */
+#include "ota_service.h"
+
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -113,7 +116,8 @@ AppBleGattServerUserWriteRequest_t AppBleGattServerUserWriteRequest[] =
 {
   { gattdb_accor_cp, accoriServiceCpWrite },
   { gattdb_cycling_speed_cp, cscServiceControlPointWrite },
-  { gattdb_aio_digital_out, aioServiceDigitalOutWrite }
+  { gattdb_aio_digital_out, aioServiceDigitalOutWrite },
+  { gattdb_ota_control, otaServiceControlWrite }
 };
 
 AppBleGattServerCharStatus_t AppBleGattServerCharStatus[] =
@@ -221,10 +225,14 @@ void appBleInit(void)
   cscServiceInit();
   aioServiceInit();
   esServiceInit();
+
+  otaServiceInit();
 }
 
 void appBleConnectionClosedEvent(uint8_t connection, uint16_t reason)
 {
+  otaServiceConnectionClosed();
+
   accoriServiceConnectionClosed();
   conConnectionClosed();
 
