@@ -24,9 +24,10 @@ extern const struct bg_gattdb_def bg_gattdb_data;
 #define gattdb_es_humidity                     44
 #define gattdb_es_temperature                  46
 #define gattdb_es_uvindex                      48
-#define gattdb_amblight_lux                    51
-#define gattdb_accor_acceleration              54
-#define gattdb_accor_orientation               57
-#define gattdb_accor_cp                        60
+#define gattdb_ota_control                     51
+#define gattdb_amblight_lux                    54
+#define gattdb_accor_acceleration              57
+#define gattdb_accor_orientation               60
+#define gattdb_accor_cp                        63
 
 #endif
