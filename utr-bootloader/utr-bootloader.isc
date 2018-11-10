@@ -67,3 +67,6 @@ lastHwConfFileUsed=PATH(ISC_RELATIVE):custom_efr32bg1b232f256gm48.hwconf
 }
 
 # Plugin options
+pluginOption(efr32~family[B]~series[1]~device_configuration[1]~performance[B]~radio[232]~flash[256K]~temp[G]~package[M]~pins[48]~!module+none+gcc): BOOTLOADER_ENFORCE_SIGNED_UPGRADE,true
+pluginOption(efr32~family[B]~series[1]~device_configuration[1]~performance[B]~radio[232]~flash[256K]~temp[G]~package[M]~pins[48]~!module+none+gcc): BOOTLOADER_ENFORCE_ENCRYPTED_UPGRADE,true
+pluginOption(efr32~family[B]~series[1]~device_configuration[1]~performance[B]~radio[232]~flash[256K]~temp[G]~package[M]~pins[48]~!module+none+gcc): BOOTLOADER_ENFORCE_SECURE_BOOT,true
