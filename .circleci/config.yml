@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: gregbreen/uncannier-thunderboard
+    steps:
+      - checkout
+      - run:
+          name: Build the Uncannier Thunderboard React bootloader
+          command: /opt/SimplicityStudio_v4/studio -nosplash -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -import utr-bootloader -cleanBuild utr-bootloader/Release
+      - run:
+          name: Build the Uncannier Thunderboard React application
+          command: /opt/SimplicityStudio_v4/studio -nosplash -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -import utr-application -cleanBuild utr-application/Release
+      - run:
+          name: Package the build artifacts
+          command: |
+            cd utr-application/Release
+            mv utr-image.hex utr-image-$CIRCLE_BUILD_NUM.hex
+            mv utr-application.gbl utr-application-$CIRCLE_BUILD_NUM.gbl
+            mv utr-apploader.gbl utr-apploader-$CIRCLE_BUILD_NUM.gbl
+            tar -cvzf uncannier-thunderboard-react.tar.gz utr-image-$CIRCLE_BUILD_NUM.hex utr-application-$CIRCLE_BUILD_NUM.gbl utr-apploader-$CIRCLE_BUILD_NUM.gbl
+      - store_artifacts:
+          path: ./utr-application/Release/uncannier-thunderboard-react.tar.gz
+          destination: uncannier-thunderboard-react.tar.gz
+
