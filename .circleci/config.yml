@@ -9,17 +9,31 @@ jobs:
           name: Build the Uncannier Thunderboard React bootloader
           command: /opt/SimplicityStudio_v4/studio -nosplash -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -import utr-bootloader -cleanBuild utr-bootloader/Release
       - run:
-          name: Build the Uncannier Thunderboard React application
+          name: Build the Uncannier Thunderboard React application - Debug configuration
+          command: /opt/SimplicityStudio_v4/studio -nosplash -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -import utr-application -cleanBuild utr-application/Debug
+      - run:
+          name: Build the Uncannier Thunderboard React application - Release configuration
           command: /opt/SimplicityStudio_v4/studio -nosplash -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -import utr-application -cleanBuild utr-application/Release
       - run:
-          name: Package the build artifacts
+          name: Build the Uncannier Thunderboard React application - Test configuration
+          command: /opt/SimplicityStudio_v4/studio -nosplash -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -import utr-application -cleanBuild utr-application/Test
+      - run:
+          name: Generate xUnit-compatible test output
+          command: mkdir -p JUnit; utr-application/Test/utr-application -ojunit; mv cpputest*.xml JUnit
+      - run:
+          name: Package the build binaries
           command: |
             cd utr-application/Release
             mv utr-image.hex utr-image-$CIRCLE_BUILD_NUM.hex
             mv utr-application.gbl utr-application-$CIRCLE_BUILD_NUM.gbl
             mv utr-apploader.gbl utr-apploader-$CIRCLE_BUILD_NUM.gbl
             tar -cvzf uncannier-thunderboard-react.tar.gz utr-image-$CIRCLE_BUILD_NUM.hex utr-application-$CIRCLE_BUILD_NUM.gbl utr-apploader-$CIRCLE_BUILD_NUM.gbl
+      - store_test_results:
+          path: ./JUnit
       - store_artifacts:
           path: ./utr-application/Release/uncannier-thunderboard-react.tar.gz
           destination: uncannier-thunderboard-react.tar.gz
+      - store_artifacts:
+          path: ./utr-application/Test/Coverage
+          destination: Coverage
 
