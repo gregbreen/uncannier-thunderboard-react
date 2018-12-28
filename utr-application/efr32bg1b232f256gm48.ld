@@ -11,7 +11,7 @@
 MEMORY
 {
   FLASH_BOOTLOADER (rx) : ORIGIN = 0x0000, LENGTH = 0x4000
-  FLASH (rx) : ORIGIN = 0x4000, LENGTH = 0x00040000-0x4000-2048*2
+  FLASH (rx) : ORIGIN = 0x4000, LENGTH = 0x00040000-0x4000
   RAM (rwx)  : ORIGIN = 0x20000000, LENGTH = 0x00007C00
 }
 
@@ -195,5 +195,5 @@ SECTIONS
   } > FLASH
   
   /* Set NVM to end of FLASH*/
-  __nvm3Base = ORIGIN(FLASH) + LENGTH(FLASH)- SIZEOF(.nvm_dummy);
+  __nvm3Base = 0x00040000- SIZEOF(.nvm_dummy);
 }

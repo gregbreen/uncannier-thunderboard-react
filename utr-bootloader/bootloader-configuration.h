@@ -21,6 +21,7 @@
 #define BOOTLOADER_ENFORCE_SIGNED_UPGRADE
 #define BOOTLOADER_ENFORCE_ENCRYPTED_UPGRADE
 #define BOOTLOADER_ENFORCE_SECURE_BOOT
+#define BTL_UPGRADE_LOCATION_BASE 32768
 
 // Use this macro to check if Cyclic Redundancy Check plugin is included
 #define EMBER_AF_PLUGIN_CRC

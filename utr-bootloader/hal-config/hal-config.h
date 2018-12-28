@@ -36,20 +36,19 @@
 // [BUTTON]$
 
 // $[CMU]
-#define HAL_CLK_HFCLK_SOURCE              (HAL_CLK_HFCLK_SOURCE_HFRCO)
-#define HAL_CLK_LFECLK_SOURCE             (HAL_CLK_LFCLK_SOURCE_DISABLED)
-#define HAL_CLK_LFBCLK_SOURCE             (HAL_CLK_LFCLK_SOURCE_DISABLED)
-#define BSP_CLK_LFXO_PRESENT              (0)
-#define BSP_CLK_HFXO_PRESENT              (0)
-#define BSP_CLK_LFXO_INIT                  CMU_LFXOINIT_DEFAULT
-#define BSP_CLK_LFXO_CTUNE                (0U)
-#define BSP_CLK_LFXO_FREQ                 (32768U)
-#define HAL_CLK_LFACLK_SOURCE             (HAL_CLK_LFCLK_SOURCE_DISABLED)
-#define BSP_CLK_HFXO_FREQ                 (38400000UL)
-#define BSP_CLK_HFXO_CTUNE                (-1)
-#define BSP_CLK_HFXO_INIT                  CMU_HFXOINIT_DEFAULT
-#define BSP_CLK_HFXO_CTUNE_TOKEN          (0)
-#define HAL_CLK_HFXO_AUTOSTART            (HAL_CLK_HFXO_AUTOSTART_NONE)
+#define HAL_CLK_HFCLK_SOURCE            (HAL_CLK_HFCLK_SOURCE_HFRCO)
+#define HAL_CLK_LFECLK_SOURCE           (HAL_CLK_LFCLK_SOURCE_DISABLED)
+#define HAL_CLK_LFBCLK_SOURCE           (HAL_CLK_LFCLK_SOURCE_DISABLED)
+#define BSP_CLK_LFXO_PRESENT            (0)
+#define BSP_CLK_HFXO_PRESENT            (0)
+#define BSP_CLK_LFXO_INIT                CMU_LFXOINIT_DEFAULT
+#define BSP_CLK_LFXO_CTUNE              (0U)
+#define BSP_CLK_LFXO_FREQ               (32768U)
+#define HAL_CLK_LFACLK_SOURCE           (HAL_CLK_LFCLK_SOURCE_DISABLED)
+#define BSP_CLK_HFXO_FREQ               (38400000UL)
+#define BSP_CLK_HFXO_CTUNE              (-1)
+#define BSP_CLK_HFXO_INIT                CMU_HFXOINIT_DEFAULT
+#define HAL_CLK_HFXO_AUTOSTART          (HAL_CLK_HFXO_AUTOSTART_NONE)
 // [CMU]$
 
 // $[COEX]
@@ -155,6 +154,8 @@
 #include "sl_module.h"
 #endif
 
-
 #endif /* HAL_CONFIG_H */
+
+// $[MODEM]
+// [MODEM]$
 
