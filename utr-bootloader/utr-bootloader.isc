@@ -3,7 +3,7 @@
 
 # Application configuration
 stackId: com.silabs.sdk.stack.super
-stackRoot: /opt/SimplicityStudio_v4/developer/sdks/gecko_sdk_suite/v2.4
+stackRoot: /opt/SimplicityStudio_v4/developer/sdks/gecko_sdk_suite/v2.5
 appId: bootloader
 frameworkRoot: platform/bootloader
 architecture: efr32~family[B]~series[1]~device_configuration[1]~performance[B]~radio[232]~flash[256K]~temp[G]~package[M]~pins[48]~!module+none+gcc
