@@ -3,6 +3,8 @@
   <mode name="DefaultMode">
     <property object="CMU" propertyId="ABPeripheral.included" value="true"/>
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
+    <property object="USART0" propertyId="USART.HAL_USART_FREQUENCY.INT" value="6400000"/>
+    <property object="USART1" propertyId="USART.HAL_USART_FREQUENCY.INT" value="6400000"/>
   </mode>
   <modeTransition>
     <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.source" value="RESET"/>

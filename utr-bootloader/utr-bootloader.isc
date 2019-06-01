@@ -1,5 +1,5 @@
 #ISD afv6
-# Simplicity Studio version: 4.29.2.201809141932-1327
+# Simplicity Studio version: 5.6.0.201904261019-1467
 
 # Application configuration
 stackId: com.silabs.sdk.stack.super
@@ -62,6 +62,8 @@ lastHwConfFileUsed=PATH(ISC_RELATIVE):custom_efr32bg1b232f256gm48.hwconf
 \}
 }
 {setupId:macros
+}
+{setupId:quizz
 }
 {setupId:template
 }
