@@ -99,6 +99,9 @@
 // $[LFXO]
 // [LFXO]$
 
+// $[MODEM]
+// [MODEM]$
+
 // $[PA]
 // [PA]$
 
@@ -154,8 +157,6 @@
 #include "sl_module.h"
 #endif
 
-#endif /* HAL_CONFIG_H */
 
-// $[MODEM]
-// [MODEM]$
+#endif /* HAL_CONFIG_H */
 

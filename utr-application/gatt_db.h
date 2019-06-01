@@ -1,4 +1,4 @@
-// Copyright 2018 Silicon Laboratories, Inc.
+// Copyright 2019 Silicon Laboratories, Inc.
 //
 //
 
@@ -14,20 +14,22 @@
 extern const struct bg_gattdb_def bg_gattdb_data;
 
 #define gattdb_service_changed_char             3
-#define gattdb_device_name                      7
-#define gattdb_system_id                       18
-#define gattdb_battery_measurement             21
-#define gattdb_cycling_speed_measurement         25
-#define gattdb_cycling_speed_cp                30
-#define gattdb_aio_digital_in                  34
-#define gattdb_aio_digital_out                 39
-#define gattdb_es_humidity                     44
-#define gattdb_es_temperature                  46
-#define gattdb_es_uvindex                      48
-#define gattdb_ota_control                     51
-#define gattdb_amblight_lux                    54
-#define gattdb_accor_acceleration              57
-#define gattdb_accor_orientation               60
-#define gattdb_accor_cp                        63
+#define gattdb_database_hash                    6
+#define gattdb_client_support_features          8
+#define gattdb_device_name                     11
+#define gattdb_system_id                       22
+#define gattdb_battery_measurement             25
+#define gattdb_cycling_speed_measurement         29
+#define gattdb_cycling_speed_cp                34
+#define gattdb_aio_digital_in                  38
+#define gattdb_aio_digital_out                 43
+#define gattdb_es_humidity                     48
+#define gattdb_es_temperature                  50
+#define gattdb_es_uvindex                      52
+#define gattdb_ota_control                     55
+#define gattdb_amblight_lux                    58
+#define gattdb_accor_acceleration              61
+#define gattdb_accor_orientation               64
+#define gattdb_accor_cp                        67
 
 #endif

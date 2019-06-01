@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="EFR32BG1B232F256GM48" partId="mcu.arm.efr32.bg1.efr32bg1b232f256gm48" contextId="com.silabs.sdk.stack.super:2.5.0._-1317205821">
+<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="EFR32BG1B232F256GM48" partId="mcu.arm.efr32.bg1.efr32bg1b232f256gm48" contextId="com.silabs.sdk.stack.super:2.5.5._-1317205821">
   <mode name="DefaultMode">
     <property object="CMU" propertyId="ABPeripheral.included" value="true"/>
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
+    <property object="USART0" propertyId="USART.HAL_USART_FREQUENCY.INT" value="6400000"/>
+    <property object="USART1" propertyId="USART.HAL_USART_FREQUENCY.INT" value="6400000"/>
   </mode>
   <modeTransition>
     <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.source" value="RESET"/>
