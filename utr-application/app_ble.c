@@ -47,7 +47,8 @@
 #include "accori_service.h"
 #include "aio_service.h"
 
-/* uncannier profiles */
+/* uncannier headers */
+#include "di_service.h"
 #include "ota_service.h"
 
 #include <stdbool.h>
@@ -232,6 +233,7 @@ void appBleInit(void)
   aioServiceInit();
   esServiceInit();
 
+  diServiceSwVerInit();
   otaServiceInit();
 }
 
@@ -271,6 +273,7 @@ void appBleHandleEvents(struct gecko_cmd_packet *evt)
     /* This event indicates the device has started and is ready to receive any command except
      *  Bluetooth-related commands */
     case gecko_evt_system_boot_id:
+      diServiceFwVerInit( &(evt->data.evt_system_boot) );
       appInit();
       break;
 
