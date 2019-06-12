@@ -52,11 +52,7 @@ uint8_t bluetooth_stack_heap[DEFAULT_BLUETOOTH_HEAP(MAX_CONNECTIONS)];
 // Gecko configuration parameters (see gecko_configuration.h)
 static const gecko_configuration_t config = {
   .config_flags = 0,
-#if defined(FEATURE_LFXO)
   .sleep.flags = SLEEP_FLAGS_DEEP_SLEEP_ENABLE,
-#else
-  .sleep.flags = 0,
-#endif // LFXO
   .bluetooth.max_connections = MAX_CONNECTIONS,
   .bluetooth.heap = bluetooth_stack_heap,
   .bluetooth.heap_size = sizeof(bluetooth_stack_heap),
