@@ -56,29 +56,9 @@ extern "C" {
 
 /***********************************************************************************************//**
  *  @brief
- *    Initialize the module.
+ *    Measure the battery voltage.
  **************************************************************************************************/
-void batteryDeviceInit(void);
-
-/***********************************************************************************************//**
- *  @brief
- *    De-initialize the module.
- **************************************************************************************************/
-void batteryDeviceDeInit(void);
-
-/***********************************************************************************************//**
- *  @brief
- *    Must be called when a connectin is opened. It starts polling the battery
- *    voltage at regular intervals to calculate a sliding average.
- **************************************************************************************************/
-void batteryDeviceConnectionOpened(void);
-
-/***********************************************************************************************//**
- *  @brief
- *    Must be called when the connection is closed. It turns off the polling
- *    of the battery voltage.
- **************************************************************************************************/
-void batteryDeviceConnectionClosed(void);
+void batteryMeasure(void);
 
 /***********************************************************************************************//**
  *  @brief
@@ -86,12 +66,6 @@ void batteryDeviceConnectionClosed(void);
  *    It is assumed a very low current consumption and a CR2032 battery.
  **************************************************************************************************/
 uint8_t batteryDeviceReadBatteryLevel(void);
-
-/***********************************************************************************************//**
- *  @brief
- *    Event to handle periodic battery level measurements
- **************************************************************************************************/
-void batteryDeviceMeasureEvtHandler(void);
 
 /** @} (end addtogroup battery-hw) */
 /** @} (end addtogroup app_hardware) */

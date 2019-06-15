@@ -385,10 +385,6 @@ void appBleHandleEvents(struct gecko_cmd_packet *evt)
           accoriServiceOrientationTimerEvtHandler();
           break;
 
-        case BATTERY_DEVICE_TIMER:
-          batteryDeviceMeasureEvtHandler();
-          break;
-
         case BATT_SERVICE_TIMER:
           batteryServiceMeasure();
           break;
