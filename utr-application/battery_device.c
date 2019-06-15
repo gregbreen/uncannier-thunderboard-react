@@ -117,31 +117,9 @@ static uint32_t measureBatteryVoltage(void)
 /***************************************************************************************************
  * Public Function Definitions
  **************************************************************************************************/
-void batteryDeviceInit(void)
-{
-  gecko_cmd_hardware_set_soft_timer(0, BATTERY_DEVICE_TIMER, false);
-}
-
-void batteryDeviceDeInit(void)
-{
-  // Nothing to do
-}
-
-void batteryDeviceConnectionOpened(void)
+void batteryMeasure(void)
 {
   batteryVoltage = measureBatteryVoltage();
-  gecko_cmd_hardware_set_soft_timer(TIMER_MS_2_TIMERTICK(BATTERY_VOLTAGE_POLL_INTERVAL), BATTERY_DEVICE_TIMER, false);
-}
-
-void batteryDeviceConnectionClosed(void)
-{
-  gecko_cmd_hardware_set_soft_timer(0, BATTERY_DEVICE_TIMER, false);
-}
-
-void batteryDeviceMeasureEvtHandler(void)
-{
-  uint32_t last = measureBatteryVoltage();
-  batteryVoltage = ((batteryVoltage * 9) + last) / 10;
 }
 
 uint8_t batteryDeviceReadBatteryLevel(void)

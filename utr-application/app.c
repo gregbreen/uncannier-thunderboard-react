@@ -110,6 +110,7 @@ static void buttonHandler(uint8_t buttonNo, bool pushed)
   if (pushed) {
     if (sleeping) {
       sleeping = false;
+      batteryMeasure();
       advStart();
     }
   }
@@ -131,7 +132,6 @@ void appInit(void)
   cscDeviceInit();
   accoriDeviceInit();
   aioDeviceInit();
-  batteryDeviceInit();
 
   // Register calbacks for button pushes
   boardRegisterButtonCallback(&buttonHandler);
@@ -151,7 +151,6 @@ void appConnectionClosedEvent(uint8_t connection, uint16_t reason)
   rhtDeviceConnectionClosed();
   cscDeviceConnectionClosed();
   accoriDeviceConnectionClosed();
-  batteryDeviceConnectionClosed();
 
   appUiAdvStarted();
 
@@ -166,7 +165,6 @@ void appConnectionOpenedEvent(uint8_t connection, uint8_t bonding)
   rhtDeviceConnectionOpened();
   cscDeviceConnectionOpened();
   accoriDeviceConnectionOpened();
-  batteryDeviceConnectionOpened();
 
   appUiConnectionOpened();
 }

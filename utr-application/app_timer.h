@@ -51,9 +51,8 @@ typedef enum {
   UPDATE_CON_PARAM_TIMER   =  3,
   ACCORI_SERVICE_ACC_TIMER =  4,
   ACCORI_SERVICE_ORI_TIMER =  5,
-  BATTERY_DEVICE_TIMER     =  6,
-  BATT_SERVICE_TIMER       =  7,
-  CSC_SERVICE_TIMER        =  8,
+  BATT_SERVICE_TIMER       =  6,
+  CSC_SERVICE_TIMER        =  7,
 } appTimer_t;
 
 /** @} (end addtogroup app) */
